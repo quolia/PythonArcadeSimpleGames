@@ -56,7 +56,8 @@ class MyProg(arcade.Window):
 
         # Ball
 
-        imageBall = PIL.Image.new('RGB', (BALL_SIZE, BALL_SIZE), arcade.color.WHITE)
+        imageBall = PIL.Image.new('RGBA', (BALL_SIZE, BALL_SIZE), arcade.color.WHITE)
+
         textureBall = arcade.Texture(str(color), image=imageBall)
         self.ball_sprite = arcade.Sprite()
         self.ball_sprite.append_texture(textureBall)
@@ -71,7 +72,8 @@ class MyProg(arcade.Window):
 
         # Plat
 
-        imagePlat = PIL.Image.new('RGB', (PLAT_WIDTH, PLAT_HEIGHT), arcade.color.YELLOW)
+        imagePlat = PIL.Image.new('RGBA', (PLAT_WIDTH, PLAT_HEIGHT), arcade.color.YELLOW)
+
         texturePlat = arcade.Texture(str(arcade.color.YELLOW), image=imagePlat)
         self.plat_sprite = arcade.Sprite()
         self.plat_sprite.append_texture(texturePlat)
@@ -91,9 +93,10 @@ class MyProg(arcade.Window):
     def create_brick(self, x, y):
         
         color = (random.randrange(50, 256), random.randrange(50, 256), random.randrange(50, 256))
-        imageBrick = PIL.Image.new('RGB', (random.randrange(BRICK_WIDTH, BRICK_WIDTH + 10),
+        imageBrick = PIL.Image.new('RGBA', (random.randrange(BRICK_WIDTH, BRICK_WIDTH + 10),
                                            random.randrange(BRICK_HEIGHT, BRICK_HEIGHT + 10)),
                                     color)
+
         textureBrick = arcade.Texture(str(color), image=imageBrick)
         sprite = arcade.Sprite()
         sprite.append_texture(textureBrick)

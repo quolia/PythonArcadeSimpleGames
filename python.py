@@ -26,7 +26,7 @@ class Chunk(arcade.Sprite):
         self.speed = 1 if first else 0
 
         color = arcade.color.GREEN if first else arcade.color.GO_GREEN
-        image = PIL.Image.new('RGB', (CHUNK_SIZE, CHUNK_SIZE), color)
+        image = PIL.Image.new('RGBA', (CHUNK_SIZE, CHUNK_SIZE), color)
         texture = arcade.Texture(str(color), image=image)
         self.append_texture(texture)
         self.set_texture(0)        
@@ -47,7 +47,7 @@ class Rabbit(arcade.Sprite):
         super().__init__()
 
         color = arcade.color.WHITE
-        image = PIL.Image.new('RGB', (CHUNK_SIZE, CHUNK_SIZE), color)
+        image = PIL.Image.new('RGBA', (CHUNK_SIZE, CHUNK_SIZE), color)
         texture = arcade.Texture(str(color), image=image)
         self.append_texture(texture)
         self.set_texture(0)
@@ -119,7 +119,7 @@ class MyProg(arcade.Window):
             self.sprite_list.append(rabbit)
 
         color = arcade.color.RED
-        image = PIL.Image.new('RGB', (TONG_WIDTH, TONG_HEIGHT), color)
+        image = PIL.Image.new('RGBA', (TONG_WIDTH, TONG_HEIGHT), color)
         texture = arcade.Texture(str(color), image=image)
         self.tong = arcade.Sprite()
         self.tong.append_texture(texture)
